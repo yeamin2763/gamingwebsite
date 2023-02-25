@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gaming website</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+     <link rel="stylesheet" href="{% static 'style.css'%}" />
+
+  </head>
+  <body>
+    <header>
+        <a href=# class="logo">Gamers</a>
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Online Game</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="action">
+            <div class="searchbox">
+              <a href="#"><i class='bx bx-search-alt-2'></i></a>
+              <input type="text" placeholder="Search Box ">
+            </div>
+        </div>
+        <div class="togglemenu">
+
+        </div>
+    </header>
+
+    <!--Home Banner-->
+    <div class="banner">
+      <div class="bg">
+        <div class="content">
+          <h2>A New Home For <br> 
+            Game Lovers
+          </h2>
+            <p>Winning and losing does not have meaning, because some people win by losing and some lose by winning..</p>
+            <a href="#" class="btn">Play now</a>
+        </div>
+             <img src="{% static 'assassain.png'%}" alt="" width="550" height="550">
+      </div>
+    </div>
+    <!--Home Banner end-->
+
+    <!--About Section-->
+    <div class="about">
+      <div class="contentbx">
+        <h2>About Us</h2>
+        <p>
+          Gamers are individuals who play video games as a form of entertainment or competition. They come from all walks of life and can range in age, gender, and nationality. Gaming can be played on various platforms such as consoles, computers, and mobile devices. Many gamers play alone or with friends, while others participate in online communities or competitive tournaments. The gaming industry is a rapidly growing one, with new games and hardware being released regularly. Gamers can have preferences for different genres such as action, strategy, role-playing, or simulation. Some gamers take gaming seriously and may invest a significant amount of time and money into it. Gaming can have both positive and negative effects on players, including improved hand-eye coordination and increased stress levels. The gaming industry generates billions of dollars in revenue and is expected to continue growing in the future. Gaming has also become a cultural phenomenon, with conventions, merchandise, and media dedicated to it.      
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="img" style="margin-right: 150px;
+      ">
+        <img src="{% static 'Videogame.png'%}" alt="" width="350" height="=350">
+      </div>
+    </div>
+    <!--About Section end-->
+    
+ <!--GameSection start-->
+    <div class="games">
+      <h2>Popular Games</h2>
+      <ul>
+        <li class="list active">All</li>
+        <li class="list">Pc games</li>
+        <li class="list" ">Mobile games</li>
+      </ul>
+      <div class="cardbox">
+        <div class="card" data-item="pc">
+          <img src="{% static 'game1.jpg'%}" alt="">
+          <div class="content">
+            <h4>Valorent</h4>
+            <div class="progress-line"><span></span></div>  
+            <div class="info">
+              <p>Download </p>
+              <a href="#"><play now/a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+ <!--GameSection end-->
+
+<!-------sticky navbar-->  
+     <script>
+        /* Sticky NavBar */
+        window.addEventListener("scroll", function(){
+          const header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY > 0);
+      });   
+     </script>
+<!-------sticky navbar end-->  
+
+
+ 
+  </body>
+</html>
