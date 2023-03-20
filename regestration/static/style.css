@@ -100,6 +100,12 @@ header .action .searchbox input
     color:#222;
 }
 
+btn-primary {
+    color: #1aeeef;
+    background-color: #7cc;
+    border-color: #5bc2c2
+}
+
 /* Home Banner*/
 .banner
 {
@@ -126,7 +132,7 @@ header .action .searchbox input
     height: 100%;
 }
 .banner .bg .content h2{
-     font-size: 4em;
+     font-size: 3em;
      color: #fff;
      letter-spacing:1px;
 }
