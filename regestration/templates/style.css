@@ -259,6 +259,7 @@ header .action .searchbox input
     width: 100%;
     min-height: 100%;;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -317,7 +318,7 @@ header .action .searchbox input
     }
 }
 
-.games .cardbox .card info
+.games .cardbox .card .info
 {
     border-top: 2px solid #35407e;
     padding: 5px;
@@ -325,4 +326,12 @@ header .action .searchbox input
     justify-content: space-between;
     align-items: center;
 }
+.games .cardbox .card .info p
+{
+    font-size: 1em;
+    color : #fff;
 
+}
+.games .cardbox .card .info p span{
+    color:#1aeeef;
+}

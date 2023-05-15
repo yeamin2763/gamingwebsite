@@ -332,3 +332,16 @@ btn-primary {
     align-items: center;
 }
 
+.games .cardbox .card .info p
+{
+    font-size: 1em;
+    color : #fff;
+
+}
+.games .cardbox .card .info p span{
+    color:#1aeeef;
+}
+
+
+/*game*/
+

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +6,17 @@
     <!-- Design by foolishdeveloper.com -->
     <title>Signup Page</title>
 
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!--Stylesheet-->
+    <link rel="stylesheet" href="{%static 'script.js'%}">
     <style media="screen">
         *,
         *:before,
@@ -67,6 +75,7 @@
             font-weight: 500;
             line-height: 42px;
             text-align: center;
+            margin-top: -34px
         }
 
         label {
@@ -130,6 +139,23 @@
         .social i {
             margin-right: 4px;
         }
+
+        #message {
+            position: absolute;
+            bottom: 30px;
+            color: #fff;
+            font-size: 15px;
+            display: none;
+
+        }
+       .fa-eye
+       {
+        position:absolute;
+        margin-top: -28px;
+        margin-left: 340px;
+        cursor: pointer;
+        color: lightgray;
+       }
     </style>
 </head>
 
@@ -150,15 +176,48 @@
         <input type="email" placeholder="Email or Phone" name="email" id="email">
 
         <label for="password1">Password</label>
-        <input type="password" placeholder="Password" id="password1" name="password1">
-
+        <input type="password" placeholder="Password" id="password1" name="password1" onInput="check()">
+        <i class="fa-solid fa-eye" id="show-password1"></i>
 
         <label for="password2">Confrom Password</label>
-        <input type="password" placeholder="Confrom Password" id="password2" name="password2">
-        <button type="submit">Signup</button>
 
-        <a href="{% url 'login' %}">i have already account</a>
+        <input type="password" placeholder="Confrom Password" id="password2" name="password2">
+        <i class="fa-solid fa-eye" id="show-password2"></i>
+        <button type="submit">Signup</button>
+        <p id="message">Password is <span id="strength"></span></p>
+        <div class="msg">
+            <a href="{% url 'login' %}">i have already account</a>
+        </div>
+        <script src=" {% static 'script.js' %}" type="text/javascript"></script>
     </form>
+
+    <script>
+        var pass = document.getElementById("password1")
+        var msg = document.getElementById("message")
+        var str = document.getElementById("strength")
+
+        pass.addEventListener('input', () => {
+            if (pass.value.length > 0) {
+                msg.style.display = "block";
+            }
+            else {
+                msg.style.display = "none";
+            }
+            if (pass.value.length < 4) {
+                str.innerHTML = "weak"
+                msg.style.color = "#ff5925";
+            }
+            else if (pass.value.length >= 4 && pass.value.length < 8) {
+                str.innerHTML = "medium"
+                msg.style.color = "yellow";
+            }
+            else if (pass.value.length >= 8) {
+                str.innerHTML = "strong"
+                msg.style.color = "#26d730";
+            }
+        })
+    </script>
+
 </body>
 
 </html>

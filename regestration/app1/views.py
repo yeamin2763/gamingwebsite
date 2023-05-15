@@ -8,6 +8,9 @@ from .models import Contact
 def HomePage(request):
     return render (request,'home.html')
 
+def snakegame(request):
+        return render(request, 'snakegame.html')
+
 def SignupPage(request):
     if request.method=='POST':
         uname=request.POST.get('username')
@@ -45,16 +48,20 @@ def LogoutPage(request):
     logout(request)
     return redirect('login')
 
+    
 def ContactPage(request):
-    if request.method =="post":
-      cantact=Contact()
-      name=request.POST.get['name']
-      email=request.POST.get['email']
-      message=request.POST.get['message']
-      Contact.name=name
-      Contact.email=email
-      Contact.message=message
-      Contact.save
-      return HttpResponse ("Thanks for contact us!!!")
+    if request.method=='POST':
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        message=request.POST.get('message')
+        contact.name=name
+        contact.email=email
+        contact.message=message
+        contact.save()
+        return HttpResponse("Thanks for contact us!!!")
+    
     else:
         return render (request,'contact.html')
+    
+    

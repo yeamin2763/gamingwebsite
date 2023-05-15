@@ -22,7 +22,7 @@
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Games</a></li>
-      <li><a href="#">Online Game</a></li>
+      <li><a href="{% url 'snakegame' %}">Online Game</a></li>
       <li><a href="{% url 'contact' %}">Contact</a></li>
       <a href="{% url 'logout'%}" class="btn btn-primary" style="margiN-left:30px;">Logout</a>
       <div class="action">
@@ -43,7 +43,7 @@
           Game Lovers
         </h2>
         <p>Winning and losing does not have meaning, because some people win by losing and some lose by winning..</p>
-        <a href="#" class="btn">Play now</a>
+        <a href="{% url 'snakegame' %}" class="btn">Play now</a>
       </div>
       <img src="{% static 'pngegg.png'%}" alt="" width="550" height="550">
     </div>
@@ -88,15 +88,52 @@
           <img src="{% static 'game1.jpg'%}" alt="">
           <div class="content">
             <h4>Valorent</h4>
-            <div class="progress-line"><span></span></div>
+            <div class="progress-line">
+            <span></span>
+            </div>
             <div class="info">
-              <p>Download </p>
-              <a href="#">
-                <play now/a>
+              <p style="color: #fff;">Download </p>
             </div>
           </div>
         </div>
-  </div>
+        <div class="card" data-item="pc">
+          <img src="{% static 'game2.jpg'%}" alt="">
+          <div class="content">
+            <h4>God of war</h4>
+            <div class="progress-line">
+            <span></span>
+            </div>
+            <div class="info">
+              <p style="color: #fff;">Download </p>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-item="pc">
+          <img src="{% static 'game3.jpg'%}" alt="">
+          <div class="content">
+            <h4>Spiderman</h4>
+            <div class="progress-line">
+            <span></span>
+            </div>
+            <div class="info">
+              <p style="color: #fff;">Download </p>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-item="pc">
+          <img src="{% static 'game4.jpg'%}" alt="">
+          <div class="content">
+            <h4>Batman</h4>
+            <div class="progress-line">
+            <span></span>
+            </div>
+            <div class="info">
+              <p style="color: #fff;">Download </p>
+            </div>
+          </div>
+        </div>
+        
+    </div>
   </div>
 
   <!--GameSection end-->
